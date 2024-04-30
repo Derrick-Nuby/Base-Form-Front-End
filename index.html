@@ -9,6 +9,12 @@
 <body>
 <div class="center">
 <form action="" id="userFormSub">
+
+<!-- Personal details -->
+
+
+    <div class="form-section active" id="section1">
+    <h2>personal details</h2>
     <label for="firstName">Enter the firstName</label>
     <input autocomplete="off" type="text" name="firstName" id="firstName">
     <label for="middleName">Enter the middleName</label>
@@ -27,6 +33,13 @@
     <input autocomplete="off" type="text" name="whatsappPhone" id="whatsappPhone">
     <label for="idNumber">Enter the idNumber</label>
     <input autocomplete="off" type="text" name="idNumber" id="idNumber">
+    <button onclick="nextSection(1)" class="up">Next</button>
+    </div>
+
+<!-- Academic details -->
+
+    <div class="form-section" id="section2">
+    <h2>Academic details</h2>
     <label for="yearCompleted">Enter the yearCompleted</label>
     <input autocomplete="off" type="text" name="yearCompleted" id="yearCompleted">
     <label for="schoolCat">Enter the schoolCat</label>
@@ -35,6 +48,15 @@
     <input autocomplete="off" type="text" name="combination" id="combination">
     <label for="indexNumber">Enter the indexNumber</label>
     <input autocomplete="off" type="text" name="indexNumber" id="indexNumber">
+
+    <button onclick="prevSection(2)" class="up">Previous</button>
+    <button onclick="nextSection(2)">Next</button>
+    </div>
+
+<!--  Parental and Guardian details-->
+
+    <div class="form-section" id="section3">
+    <h2>Parental and Guardian details</h2>
     <label for="fatherNames">Enter the fatherNames</label>
     <input autocomplete="off" type="text" name="fatherNames" id="fatherNames">
     <label for="fatherPhone">Enter the fatherPhone</label>
@@ -47,6 +69,14 @@
     <input autocomplete="off" type="text" name="guardianNames" id="guardianNames">
     <label for="guardianPhone">Enter the guardianPhone</label>
     <input autocomplete="off" type="text" name="guardianPhone" id="guardianPhone">
+    <button onclick="prevSection(3)" class="up">Previous</button>
+    <button onclick="nextSection(3)">Next</button>
+    </div>
+    
+<!-- location and identity status -->
+    
+    <div class="form-section" id="section4">
+    <h2>location and identity status</h2>
     <label for="countryOfBirth">Enter the countryOfBirth</label>
     <input autocomplete="off" type="text" name="countryOfBirth" id="countryOfBirth">
     <label for="countryResidence">Enter the countryResidence</label>
@@ -63,21 +93,54 @@
     <input autocomplete="off" type="text" name="cell" id="cell">
     <label for="village">Enter the village</label>
     <input autocomplete="off" type="text" name="village" id="village">
+
+    <button onclick="prevSection(4)" class="up">Previous</button>
+    <button onclick="nextSection(4)">Next</button>
+
+    </div>
+
+<!-- additional details -->
+
+    <div class="form-section" id="section5">
+    <h2>additional details</h2>
     <label for="disabilities">Enter the disabilities</label>
     <input autocomplete="off" type="text" name="disabilities" id="disabilities">
     <label for="maritalStatus">Enter the maritalStatus</label>
     <input autocomplete="off" type="text" name="maritalStatus" id="maritalStatus">
     <label for="work">Enter the work</label>
     <input autocomplete="off" type="text" name="work" id="work">
+
+    <button onclick="prevSection(5)" class="up">Previous</button>
+    <button onclick="nextSection(5)">Next</button>
+
+    </div>
+    
+<!-- Supporting Documents -->
+
+    <div class="form-section" id="section6">
+    <h2>Supporting Documents</h2>
     <label for="idDocument">Enter the idDocument</label>
     <input autocomplete="off" type="file" name="idDocument" id="idDocument">
     <label for="resultSlip">Enter the resultSlip</label>
     <input autocomplete="off" type="file" name="resultSlip" id="resultSlip">
     <label for="passportImage">Enter the passportImage</label>
     <input autocomplete="off" type="file" name="passportImage" id="passportImage">
+
+    <button onclick="prevSection(6)" class="up">Previous</button>
+    <button onclick="nextSection(6)">Next</button>
+    </div>
+
+<!-- Submit page -->
+
+    <div class="form-section" id="section7">
+    <h2>Submit page</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam, fugit, iusto numquam est vel voluptatum repellendus nam, aperiam optio pariatur incidunt dolorem mollitia nihil illo repellat veritatis praesentium magni amet. <br> <br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam, fugit, iusto numquam est vel voluptatum repellendus nam, aperiam optio pariatur incidunt dolorem mollitia nihil illo repellat veritatis praesentium magni amet.</p>
+    <button onclick="prevSection(7)" class="up">Previous</button>
     <input type="submit" value="Submit form">
+    </div>
 </form>
 </div>
 </body>
+<script src="./pages.js"></script>
 <script src="./app.js"></script>
 </html>
