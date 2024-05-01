@@ -5,6 +5,10 @@ document.getElementById('userFormSub').addEventListener('submit', userCreateAcco
 
 function userCreateAccount(event) {
     event.preventDefault();
+
+    const loading = document.getElementById('loading');
+    loading.style.display = 'block';
+
     
     // const form = event.target;
     // form.reset()
@@ -12,7 +16,7 @@ function userCreateAccount(event) {
     // const formData = new FormData(form);
 const firstName = document.getElementById('firstName').value
 const middleName = document.getElementById('middleName').value
-const lastName = document.getElementById('lastName').value.toUpperCase()
+const lastName = document.getElementById('lastName').value
 const gender = document.getElementById('gender').value
 const DOB = document.getElementById('DOB').value
 const email = document.getElementById('email').value
@@ -87,9 +91,41 @@ formData.append('passportImage', passportImage);
     return response.json()
     })
     .then(data => {
+        loading.style.display = 'none';
+        if (data.error) {
+            showMessage(data.error);
+        } else {
+            showMessage(data.message, '#10E956');
+            window.location.href = './success.html';
+
+        }
         console.log(data);
     })
     .catch(error => {
+        loading.style.display = 'none';
+        showMessage(data.error);
         console.log(error);
     });
+}
+
+function showMessage(message, color, duration = 7000) {
+    const msgbox = document.getElementById('msgbox');
+    const messageParagraph = msgbox.querySelector('p');
+    
+    msgbox.style.display = 'block';
+    // msgbox.style.right = '-100%';
+    // msgbox.style.animation = 'none';
+    // msgbox.style.backgroundColor = 'rgb(145, 0, 0)';
+
+    messageParagraph.textContent = message;
+    msgbox.style.backgroundColor = color;
+
+    // msgbox.offsetHeight;
+    // msgbox.style.animation = 'slideInFromRight 1s ease-in-out forwards';
+
+    setTimeout(function() {
+        msgbox.style.display = 'none';
+        // msgbox.style.animation = 'slideOutToRight 3s ease-in-out 0s forwards';
+    }, duration);
+        
 }
