@@ -76,13 +76,13 @@ button {
     margin-top: 40px;
 }
 
-.form-section {
+/* .form-section {
     display: none;
 }
 
 .form-section.active {
     display: block;
-}
+} */
 
 .errordiv {
     color: red;

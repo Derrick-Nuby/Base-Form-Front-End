@@ -1,4 +1,6 @@
+// var API_URL = 'https://base-forms.onrender.com/api/v1';
 var API_URL = 'http://localhost:4000/api/v1';
+
 
 document.getElementById('userFormSub').addEventListener('submit', userCreateAccount);
 
@@ -33,8 +35,8 @@ const motherNames = document.getElementById('motherNames').value
 const motherPhone = document.getElementById('motherPhone').value
 const guardianNames = document.getElementById('guardianNames').value
 const guardianPhone = document.getElementById('guardianPhone').value
-const countryOfBirth = document.getElementById('countryOfBirth').value
-const countryResidence = document.getElementById('countryResidence').value
+const countryOfBirth = document.getElementById('countryBirth').value
+const countryResidence = document.getElementById('country').value
 const countryNationality = document.getElementById('countryNationality').value
 const province = document.getElementById('province').value
 const district = document.getElementById('district').value
@@ -47,8 +49,10 @@ const work = document.getElementById('work').value
 const idDocument = document.getElementById('idDocument').files[0];
 const resultSlip = document.getElementById('resultSlip').files[0];
 const passportImage = document.getElementById('passportImage').files[0];
+const formName = 'TestingPhase';
 
 const formData = new FormData();
+formData.append('formName', formName);
 formData.append('firstName', firstName);
 formData.append('middleName', middleName);
 formData.append('lastName', lastName);

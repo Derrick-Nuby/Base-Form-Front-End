@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
- <img src="./assets/loading.gif" alt="loading" id="loading">
+ <img src="../assets/loading.gif" alt="loading" id="loading">
     <div id="msgbox">
         <p>Error element here</p>
     </div>
@@ -50,7 +50,9 @@
     <div class="form-section" id="section2">
     <h2>Academic details</h2>
     <label for="yearCompleted">Enter the yearCompleted</label>
-    <input type="date" name="yearCompleted" id="yearCompleted">
+    <select name="yearCompleted" id="yearCompleted">
+        <option value="select">Select year you completed secondary..</option>
+    </select>
     <label for="schoolCat">Enter the schoolCat</label>
     <select id="schoolCat">
         <option value="select">Select Secondary School Category..</option>
@@ -91,22 +93,47 @@
     
     <div class="form-section" id="section4">
     <h2>location and identity status</h2>
-    <label for="countryOfBirth">Enter the countryOfBirth</label>
-    <input autocomplete="off" type="text" name="countryOfBirth" id="countryOfBirth">
-    <label for="countryResidence">Enter the countryResidence</label>
-    <input autocomplete="off" type="text" name="countryResidence" id="countryResidence">
-    <label for="countryNationality">Enter the countryNationality</label>
-    <input autocomplete="off" type="text" name="countryNationality" id="countryNationality">
-    <label for="province">Enter the province</label>
-    <input autocomplete="off" type="text" name="province" id="province">
+
+    <label for="countryBirth">Select country of birth</label>
+    <select id="countryBirth">
+        <option value="Rwanda">Rwanda</option>
+    </select>
+
+    <label for="countryNationality">Select country of residence</label>
+    <select id="countryNationality">
+        <option value="select">Select country of Nationality</option>
+        <option value="Rwanda">Rwanda</option>
+    </select>
+
+    <label for="country">Select country</label>
+    <select name="country" id="country">
+        <option value="select">Select the country of residance</option>
+    </select>
+
+    <label for="countryResidence">Select Your province</label>
+    <select name="province" id="province">
+        <option value="select">Select Your Province</option>
+    </select>
+
     <label for="district">Enter the district</label>
-    <input autocomplete="off" type="text" name="district" id="district">
+    <select name="district" id="district">
+        <option value="select">Select Your District</option>
+    </select>
+
     <label for="sector">Enter the sector</label>
-    <input autocomplete="off" type="text" name="sector" id="sector">
+    <select name="sector" id="sector">
+        <option value="select">Select Your Sector</option>
+    </select>
+
     <label for="cell">Enter the cell</label>
-    <input autocomplete="off" type="text" name="cell" id="cell">
+    <select name="cell" id="cell">
+        <option value="select">Select Your Cell</option>
+    </select>
+
     <label for="village">Enter the village</label>
-    <input autocomplete="off" type="text" name="village" id="village">
+    <select name="village" id="village">
+        <option value="select">Select Your Village</option>
+    </select>
 
     <button onclick="prevSection(4)" class="up">Previous</button>
     <button onclick="nextSection(4)">Next</button>
@@ -178,7 +205,25 @@
 </form>
 </div>
 </body>
+<script src="./rwandageostructure.js"></script>
 <script src="./pages.js"></script>
 <script src="./validation.js"></script>
 <script src="./app.js"></script>
+
+<script>
+    function populateYearDropdown() {
+        const select = document.getElementById('yearCompleted');
+        const currentYear = new Date().getFullYear();
+        const startYear = 2018; // or any starting year you prefer
+    
+        for (let year = currentYear; year >= startYear; year--) {
+            const option = document.createElement('option');
+            option.value = year;
+            option.textContent = year;
+            select.appendChild(option);
+        }
+    }
+    
+    window.onload = populateYearDropdown;
+</script>
 </html>
