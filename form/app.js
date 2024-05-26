@@ -1,5 +1,5 @@
-// var API_URL = 'https://base-forms.onrender.com/api/v1';
-var API_URL = 'http://localhost:4000/api/v1';
+var API_URL = 'https://base-forms.onrender.com/api/v1';
+// var API_URL = 'http://localhost:4000/api/v1';
 
 
 document.getElementById('userFormSub').addEventListener('submit', userCreateAccount);
@@ -11,11 +11,7 @@ function userCreateAccount(event) {
     const loading = document.getElementById('loading');
     loading.style.display = 'block';
 
-    
-    // const form = event.target;
-    // form.reset()
 
-    // const formData = new FormData(form);
 const firstName = document.getElementById('firstName').value
 const middleName = document.getElementById('middleName').value
 const lastName = document.getElementById('lastName').value

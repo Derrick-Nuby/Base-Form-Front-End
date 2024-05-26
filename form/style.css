@@ -76,13 +76,13 @@ button {
     margin-top: 40px;
 }
 
-/* .form-section {
+.form-section {
     display: none;
 }
 
 .form-section.active {
     display: block;
-} */
+}
 
 .errordiv {
     color: red;
@@ -106,4 +106,29 @@ button {
     transform: translate(-50%, -50%);
     z-index: 9999;
     display: none;
+}
+
+
+@media (max-width: 700px) {
+    body {
+        font-size: 16px;
+    }
+
+    form {
+        width: 90%;
+        padding: 20px;
+        margin: 20px auto;
+    }
+
+    select, input[type="date"], input[type="text"], input[type="submit"], button {
+        font-size: 16px;
+    }
+
+    .errordiv {
+        font-size: 14px;
+    }
+
+    #msgbox {
+        font-size: 18px;
+    }
 }

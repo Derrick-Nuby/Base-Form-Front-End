@@ -17,13 +17,6 @@ document.getElementById('motherNames').addEventListener('input', validatemotherN
 document.getElementById('motherPhone').addEventListener('input', validatephone);
 document.getElementById('guardianNames').addEventListener('input', validateguardianNames);
 document.getElementById('guardianPhone').addEventListener('input', validatephone);
-document.getElementById('countryOfBirth').addEventListener('input', validatecountryOfBirth);
-document.getElementById('country').addEventListener('input', validatecountryResidence);
-document.getElementById('province').addEventListener('input', validateprovince);
-document.getElementById('district').addEventListener('input', validatedistrict);
-document.getElementById('sector').addEventListener('input', validatesector);
-document.getElementById('cell').addEventListener('input', validatecell);
-document.getElementById('village').addEventListener('input', validatevillage);
 document.getElementById('disabilities').addEventListener('input', validatedisabilities);
 document.getElementById('maritalStatus').addEventListener('input', validatemaritalStatus);
 document.getElementById('work').addEventListener('input', validatework);
@@ -103,7 +96,6 @@ function validateDOB(event) {
     }
 }
 
-
 //validateemail
 
 function validateemail() {
@@ -131,7 +123,6 @@ function validatephone() {
     }
 }
 
-
 //validateidNumber
 
 function validateidNumber() {
@@ -150,15 +141,13 @@ function validateidNumber() {
 
 function validateyearCompleted(event) {
     event.preventDefault();
-    const docInput = event.target;
-    const selectedYear = new Date(docInput.value).getFullYear();
-    // console.log(selectedYear);
 
-    if (selectedYear < 2020 || selectedYear > 2024) {
-        showError('That Year is not Accepted for this application', docInput);
+    if (this.value === 'select') {
+        showError('Please choose the year you completed secondary school', this);
     } else {
-        hideError(docInput);
+        hideError(this)
     }
+
 }
 
 //validateschoolCat
@@ -252,135 +241,6 @@ function validateguardianNames() {
     }
 }
 
-
-//validatecountryOfBirth
-
-function validatecountryOfBirth(event) {
-    const inputElement = event.target;
-    const input = inputElement.value.toUpperCase();
-    inputElement.value = input;
-
-    const hasNumbers = /\d/.test(input);
-
-    if (hasNumbers) {
-        showError('No numbers allowed here', this);
-    } else {
-        hideError(this)
-    }
-}
-
-//validatecountryResidence
-
-function validatecountryResidence(event) {
-    const inputElement = event.target;
-    const input = inputElement.value.toUpperCase();
-    inputElement.value = input;
-
-    const hasNumbers = /\d/.test(input);
-
-    if (hasNumbers) {
-        showError('No numbers allowed here', this);
-    } else {
-        hideError(this)
-    }
-}
-
-//validatecountryNationality
-
-function validatecountryNationality(event) {
-    const inputElement = event.target;
-    const input = inputElement.value.toUpperCase();
-    inputElement.value = input;
-
-    const hasNumbers = /\d/.test(input);
-
-    if (hasNumbers) {
-        showError('No numbers allowed here', this);
-    } else {
-        hideError(this)
-    }
-}
-
-//validateprovince
-
-function validateprovince(event) {
-    const inputElement = event.target;
-    const input = inputElement.value.toUpperCase();
-    inputElement.value = input;
-
-    const hasNumbers = /\d/.test(input);
-
-    if (hasNumbers) {
-        showError('No numbers allowed here', this);
-    } else {
-        hideError(this)
-    }
-}
-
-//validatedistrict
-
-function validatedistrict(event) {
-    const inputElement = event.target;
-    const input = inputElement.value.toUpperCase();
-    inputElement.value = input;
-
-    const hasNumbers = /\d/.test(input);
-
-    if (hasNumbers) {
-        showError('No numbers allowed here', this);
-    } else {
-        hideError(this)
-    }
-}
-
-//validatesector
-
-function validatesector(event) {
-    const inputElement = event.target;
-    const input = inputElement.value.toUpperCase();
-    inputElement.value = input;
-
-    const hasNumbers = /\d/.test(input);
-
-    if (hasNumbers) {
-        showError('No numbers allowed here', this);
-    } else {
-        hideError(this)
-    }
-}
-
-//validatecell
-
-function validatecell(event) {
-    const inputElement = event.target;
-    const input = inputElement.value.toUpperCase();
-    inputElement.value = input;
-
-    const hasNumbers = /\d/.test(input);
-
-    if (hasNumbers) {
-        showError('No numbers allowed here', this);
-    } else {
-        hideError(this)
-    }
-}
-
-//validatevillage
-
-function validatevillage(event) {
-    const inputElement = event.target;
-    const input = inputElement.value.toUpperCase();
-    inputElement.value = input;
-
-    const hasNumbers = /\d/.test(input);
-
-    if (hasNumbers) {
-        showError('No numbers allowed here', this);
-    } else {
-        hideError(this)
-    }
-}
-
 //validatedisabilities
 
 function validatedisabilities() {
@@ -397,8 +257,6 @@ function validatedisabilities() {
 //validatemaritalStatus
 
 function validatemaritalStatus(event) {
-
-
     if (this.value === 'select') {
         showError('Please select your Marital Status', this);
     } else {
@@ -409,13 +267,8 @@ function validatemaritalStatus(event) {
 //validatework
 
 function validatework() {
-    event.preventDefault();
-    // this.value
-    const input = event.target.value;
-    const hasNumbers = /\d/.test(input);
-
-    if (hasNumbers) {
-        showError('No numbers allowed here', this);
+    if (this.value === 'select') {
+        showError('Please select your Marital Status', this);
     } else {
         hideError(this)
     }
